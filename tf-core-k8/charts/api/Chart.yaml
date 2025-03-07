@@ -1,0 +1,10 @@
+apiVersion: v2
+name: api
+version: 1.0.0
+
+appVersion: latest_main
+
+dependencies:
+  - name: api
+    version: 0.1.10
+    repository: https://the-bob.github.io/chartmuseum/

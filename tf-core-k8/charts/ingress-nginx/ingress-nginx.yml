@@ -1,0 +1,22 @@
+controller:
+  containerPort:
+    http: 80
+    https: 443
+  config:
+    use-forwarded-headers: "true"
+  
+  hostPort:
+    enabled: true
+    ports:
+      http: 80
+      https: 443
+
+  ingressClass: nginx
+
+  service:
+    nodePorts:
+      http: ""
+      https: ""
+      tcp: {}
+      udp: {}
+    type: LoadBalancer

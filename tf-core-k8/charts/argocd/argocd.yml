@@ -1,0 +1,33 @@
+server:
+  config:
+    url: <CONFIG_URL>
+    
+  service:
+    namedTargetPort: false
+  ingress:
+    enabled: true
+    annotations:
+      kubernetes.io/ingress.class: "nginx"
+      kubernetes.io/ingress.allow-http: "false"
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+      nginx.ingress.kubernetes.io/rewrite-target: /
+      external-dns.alpha.kubernetes.io/ttl: "60"
+      external-dns.alpha.kubernetes.io/hostname: <HOSTS>
+
+    hosts: [<HOSTS>]
+
+  ingressGrpc:
+    isAWSALB: true
+
+
+configs:
+  credentialTemplates:
+    https-creds:
+      url: https://github.com/acmecorp/docker-migration.git
+      password: the-bob
+      username: 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
+
+# extraObjects:
+#   - 
