@@ -27,7 +27,7 @@ configs:
     https-creds:
       url: https://github.com/acmecorp/docker-migration.git
       password: the-bob
-      username: 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
+      username: 
 
 # extraObjects:
 #   - 
